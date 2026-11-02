@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>إنشاء حساب - Aya Café</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #F7F1E8;
+            color: #4B3028;
+        }
+
+        header {
+            background: #4B3028;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .register-box {
+            background: white;
+            max-width: 430px;
+            margin: 35px auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px #0002;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4B3028;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c9b8a8;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 22px;
+            background: #8B5E3C;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4B3028;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #8B5E3C;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #35483B;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+  
+<header style="background:#4B3028;color:white;padding:15px;display:flex;justify-content:space-between;align-items:center;">
+    <strong style="font-size:23px;">Aya Café ☕</strong>
+
+    <div style="position:relative;">
+        <button onclick="document.getElementById('myMenu').classList.toggle('show')"
+        style="background:none;color:white;border:0;font-size:30px;cursor:pointer;">
+            ☰
+        </button>
+
+        <div id="myMenu" class="show-menu">
+            <a href="index.html">الرئيسية</a>
+            <a href="menu.html">المنيو</a>
+            <a href="order.html">اطلب الآن</a>
+            <a href="comments.html">التعليقات</a>
+            <a href="contact.html">تواصل معنا</a>
+            <a href="register.html">إنشاء حساب</a>
+            <a href="login.html">تسجيل الدخول</a>
+        </div>
+    </div>
+</header>
+
+<style>
+.show-menu {
+    display:none;
+    position:absolute;
+    left:0;
+    top:45px;
+    width:180px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    z-index:100;
+    box-shadow:0 4px 10px #0003;
+}
+.show-menu.show { display:block; }
+.show-menu a {
+    display:block;
+    padding:12px;
+    color:#4B3028;
+    text-decoration:none;
+}
+.show-menu a:hover { background:#F0E2D2; }
+</style>
+
+
+<header>
+    <h1>Aya Café ☕</h1>
+    <p>أهلاً بك في عالم القهوة الجميل</p>
+</header>
+
+<div class="register-box">
+
+    <h2>إنشاء حساب جديد ❤️</h2>
+
+    <form id="registerForm">
+
+        <label>الاسم الكامل</label>
+        <input type="text" id="name"
+               placeholder="اكتب اسمك"
+               required>
+
+        <label>البريد الإلكتروني</label>
+        <input type="email" id="email"
+               placeholder="example@gmail.com"
+               required>
+
+        <label>رقم الهاتف</label>
+        <input type="tel" id="phone"
+               placeholder="رقم هاتفك"
+               required>
+
+        <label>كلمة المرور</label>
+        <input type="password" id="password"
+               placeholder="اكتب كلمة المرور"
+               minlength="6"
+               required>
+
+        <label>تأكيد كلمة المرور</label>
+        <input type="password" id="confirmPassword"
+               placeholder="أعيد كتابة كلمة المرور"
+               minlength="6"
+               required>
+
+        <button type="submit">إنشاء الحساب</button>
+
+    </form>
+
+    <div class="links">
+        <p>لديك حساب بالفعل؟</p>
+        <a href="login.html">تسجيل الدخول</a>
+        <br><br>
+        <a href="index.html">العودة للصفحة الرئيسية</a>
+    </div>
+
+</div>
+
+<footer>
+    جميع الحقوق محفوظة © Aya Café 2026
+</footer>
+
+<script>
+    document.getElementById("registerForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let password = document.getElementById("password").value;
+        let confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+            alert("كلمتا المرور غير متطابقتين!");
+            return;
+        }
+
+        let users = JSON.parse(
+            localStorage.getItem("ayaUsers") || "[]"
+        );
+
+        let exists = users.some(function(user) {
+            return user.email.toLowerCase() === email.toLowerCase();
+        });
+
+        if (exists) {
+            alert("هذا البريد مسجل من قبل!");
+            return;
+        }
+
+        users.push({
+            name: name,
+            email: email,
+            phone: phone,
+            password: password
+        });
+
+        localStorage.setItem("ayaUsers", JSON.stringify(users));
+
+        alert("تم إنشاء حسابك بنجاح ❤️");
+
+        window.location.href = "login.html";
+
+    });
+</script>
+
+</body>
+</html>

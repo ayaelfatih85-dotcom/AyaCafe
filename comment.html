@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التعليقات | كافي آية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+<header style="background:#4B3028;color:white;padding:15px;display:flex;justify-content:space-between;align-items:center;">
+    <strong style="font-size:23px;">Aya Café ☕</strong>
+
+    <div style="position:relative;">
+        <button onclick="document.getElementById('myMenu').classList.toggle('show')"
+        style="background:none;color:white;border:0;font-size:30px;cursor:pointer;">
+            ☰
+        </button>
+
+        <div id="myMenu" class="show-menu">
+            <a href="index.html">الرئيسية</a>
+            <a href="menu.html">المنيو</a>
+            <a href="order.html">اطلب الآن</a>
+            <a href="comments.html">التعليقات</a>
+            <a href="contact.html">تواصل معنا</a>
+            <a href="register.html">إنشاء حساب</a>
+            <a href="login.html">تسجيل الدخول</a>
+        </div>
+    </div>
+</header>
+
+<style>
+.show-menu {
+    display:none;
+    position:absolute;
+    left:0;
+    top:45px;
+    width:180px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    z-index:100;
+    box-shadow:0 4px 10px #0003;
+}
+.show-menu.show { display:block; }
+.show-menu a {
+    display:block;
+    padding:12px;
+    color:#4B3028;
+    text-decoration:none;
+}
+.show-menu a:hover { background:#F0E2D2; }
+</style>
+
+
+<header>
+    <h1>💬 آراء زبائن كافي آية</h1>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html">المنيو</a>
+        <a href="order.html">طلب أوردر</a>
+        <a href="comments.html">التعليقات</a>
+        <a href="contact.html">تواصل معنا</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <form id="commentForm">
+
+        <h2>شاركونا رأيكم 💗</h2>
+
+        <label for="commentName">الاسم</label>
+        <input
+            type="text"
+            id="commentName"
+            maxlength="100"
+            required
+        >
+
+        <label for="rating">التقييم</label>
+        <select id="rating" required>
+            <option value="">اختاري التقييم</option>
+            <option value="5">⭐⭐⭐⭐⭐ ممتاز</option>
+            <option value="4">⭐⭐⭐⭐ جيد جداً</option>
+            <option value="3">⭐⭐⭐ جيد</option>
+            <option value="2">⭐⭐ مقبول</option>
+            <option value="1">⭐ يحتاج إلى تحسين</option>
+        </select>
+
+        <label for="commentText">التعليق</label>
+        <textarea
+            id="commentText"
+            maxlength="2000"
+            required
+            placeholder="اكتب رأيك عن الكافي..."
+        ></textarea>
+
+        <button type="submit" class="btn full">
+            إضافة التعليق
+        </button>
+
+        <p id="commentMessage" class="message"></p>
+
+    </form>
+
+    <section>
+        <h2 class="section-title">تعليقات الزبائن</h2>
+        <div id="commentsList" class="cards"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>رأيك يهمنا ☕</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

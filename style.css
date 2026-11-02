@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #F7F1E8;
+    color: #3D2B24;
+    line-height: 1.8;
+}
+
+header {
+    background: #4B3028;
+    color: white;
+    text-align: center;
+    padding: 25px 12px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 9px;
+    margin: 3px;
+}
+
+nav a:hover {
+    color: #E5C7A5;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.hero {
+    background: #FFFDF8;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    color: #8B5E3C;
+    margin-bottom: 12px;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 650px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.about {
+    background: #EDE2D3;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    text-align: center;
+    color: #70462E;
+    margin: 25px 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.card {
+    background: #FFFDF8;
+    padding: 18px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #00000010;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: #8B5E3C;
+    margin: 10px 0;
+}
+
+.price {
+    color: #35483B;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: #8B5E3C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 22px;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #65432D;
+}
+
+.full {
+    width: 100%;
+}
+
+form {
+    max-width: 550px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #FFFDF8;
+    border-radius: 12px;
+}
+
+form h2 {
+    text-align: center;
+    color: #70462E;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #D8C5B3;
+    border-radius: 7px;
+    background: white;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.logo {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.center {
+    text-align: center;
+    margin: 12px 0;
+}
+
+.message {
+    color: #35483B;
+    text-align: center;
+    margin-top: 15px;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    background: #35483B;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 45px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    .hero img {
+        height: 210px;
+    }
+
+    form {
+        padding: 18px;
+    }
+}

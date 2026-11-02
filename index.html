@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aya Café</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #F7F1E8;
+    color: #4B3028;
+}
+
+header {
+    background: #4B3028;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-container { position: relative; }
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    width: 210px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px #0003;
+    overflow: hidden;
+}
+
+.dropdown.show { display: block; }
+
+.dropdown a,
+.dropdown button {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    text-align: right;
+    text-decoration: none;
+    color: #4B3028;
+    background: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dropdown a:hover,
+.dropdown button:hover { background: #F0E2D2; }
+
+.hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: #E9DCCB;
+}
+
+.hero h1 { font-size: 36px; }
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.main-button {
+    display: inline-block;
+    background: #8B5E3C;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+section.content {
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.about {
+    max-width: 800px;
+    margin: auto;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    max-width: 1000px;
+    margin: 25px auto;
+}
+
+.photos img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 13px;
+    box-shadow: 0 4px 10px #0002;
+}
+
+.photo-title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    background: #35483B;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Aya Café ☕</div>
+
+    <div class="menu-container">
+        <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+        <div class="dropdown" id="dropdownMenu">
+            <a href="index.html">الرئيسية</a>
+            <a href="menu.html">المنيو</a>
+            <a href="order.html">اطلب الآن</a>
+            <a href="comments.html">التعليقات</a>
+            <a href="contact.html">تواصل معنا</a>
+
+            <div id="guestLinks">
+                <a href="register.html">إنشاء حساب</a>
+                <a href="login.html">تسجيل الدخول</a>
+            </div>
+
+            <button id="logoutBtn" onclick="logout()" style="display:none">
+                تسجيل الخروج
+            </button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>مرحباً بكم في Aya Café ☕</h1>
+    <p>
+        قهوتك المفضلة، لحظاتك الأجمل.
+        <br>
+        نرحب بكم لتستمتعوا بمذاق مميز وأجواء دافئة.
+    </p>
+    <a href="menu.html" class="main-button">اكتشف المنيو</a>
+</section>
+
+<section class="content">
+    <h2>نبذة عن Aya Café</h2>
+    <div class="about">
+        <p>
+            Aya Café هو المكان الذي يجمع بين حب القهوة
+            وجمال اللحظات الهادئة. نقدم لكم مجموعة متنوعة
+            من المشروبات الساخنة والباردة، مع اهتمامنا
+            بالجودة والطعم المميز وحسن الضيافة.
+        </p>
+        <p>
+            هدفنا أن تكون كل زيارة تجربة جميلة،
+            وكل كوب قهوة بداية لحظة سعيدة ❤️
+        </p>
+    </div>
+</section>
+
+<section class="content">
+    <h2>من أجواء ومشروبات الكافي</h2>
+
+    <div class="photos">
+        <div>
+            <img src="coffee.jpeg"
+                 alt="كوب قهوة">
+            <p class="photo-title">قهوة مميزة ☕</p>
+        </div>
+
+        <div>
+            <img src="latte.jpeg"
+                 alt="قهوة بالحليب">
+            <p class="photo-title">قهوة بالحليب</p>
+        </div>
+
+        <div>
+            <img src="cold_drink.jpeg"
+                 alt="مشروب بارد">
+            <p class="photo-title">مشروبات منعشة</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>جميع الحقوق محفوظة © Aya Café 2026</p>
+    <p>نسعد بزيارتكم دائماً ❤️</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+function updateMenu() {
+    const loggedIn = localStorage.getItem("ayaLoggedIn") === "true";
+
+    document.getElementById("guestLinks").style.display =
+        loggedIn ? "none" : "block";
+
+    document.getElementById("logoutBtn").style.display =
+        loggedIn ? "block" : "none";
+}
+
+function logout() {
+    localStorage.removeItem("ayaLoggedIn");
+    localStorage.removeItem("ayaCurrentUser");
+    alert("تم تسجيل الخروج بنجاح ❤️");
+    window.location.href = "index.html";
+}
+
+document.addEventListener("click", function(event) {
+    const container = document.querySelector(".menu-container");
+
+    if (!container.contains(event.target)) {
+        document.getElementById("dropdownMenu").classList.remove("show");
+    }
+});
+
+updateMenu();
+</script>
+
+</body>
+</html>

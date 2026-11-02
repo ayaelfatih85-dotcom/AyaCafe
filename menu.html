@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنيو | كافي آية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+<header style="background:#4B3028;color:white;padding:15px;display:flex;justify-content:space-between;align-items:center;">
+    <strong style="font-size:23px;">Aya Café ☕</strong>
+
+    <div style="position:relative;">
+        <button onclick="document.getElementById('myMenu').classList.toggle('show')"
+        style="background:none;color:white;border:0;font-size:30px;cursor:pointer;">
+            ☰
+        </button>
+
+        <div id="myMenu" class="show-menu">
+            <a href="index.html">الرئيسية</a>
+            <a href="menu.html">المنيو</a>
+            <a href="order.html">اطلب الآن</a>
+            <a href="comments.html">التعليقات</a>
+            <a href="contact.html">تواصل معنا</a>
+            <a href="register.html">إنشاء حساب</a>
+            <a href="login.html">تسجيل الدخول</a>
+        </div>
+    </div>
+</header>
+
+<style>
+.show-menu {
+    display:none;
+    position:absolute;
+    left:0;
+    top:45px;
+    width:180px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    z-index:100;
+    box-shadow:0 4px 10px #0003;
+}
+.show-menu.show { display:block; }
+.show-menu a {
+    display:block;
+    padding:12px;
+    color:#4B3028;
+    text-decoration:none;
+}
+.show-menu a:hover { background:#F0E2D2; }
+</style>
+
+
+<header>
+    <h1>☕ منيو كافي آية</h1>
+    <p>اختار مشروبك المفضل</p>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html">المنيو</a>
+        <a href="order.html">طلب أوردر</a>
+        <a href="comments.html">التعليقات</a>
+        <a href="contact.html">تواصل معنا</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h2>قائمتنا المميزة ☕</h2>
+        <p>مشروبات ساخنة وباردة وحلويات لذيذة.</p>
+    </section>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=500&q=80" alt="إسبريسو">
+            <h3>إسبريسو</h3>
+            <p>قهوة غنية ومركزة.</p>
+            <p class="price">5000 جنيه</p>
+            <button class="btn" onclick="chooseItem('إسبريسو')">اطلب الآن</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=500&q=80" alt="كابتشينو">
+            <h3>كابتشينو</h3>
+            <p>قهوة بالحليب والرغوة.</p>
+            <p class="price">7000 جنيه</p>
+            <button class="btn" onclick="chooseItem('كابتشينو')">اطلب الآن</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=500&q=80" alt="لاتيه">
+            <h3>لاتيه</h3>
+            <p>مزيج ناعم من القهوة والحليب.</p>
+            <p class="price">14000 جنيه</p>
+            <button class="btn" onclick="chooseItem('لاتيه')">اطلب الآن</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80" alt="موكا">
+            <h3>موكا</h3>
+            <p>قهوة بالشوكولاتة.</p>
+            <p class="price">10000 جنيه</p>
+            <button class="btn" onclick="chooseItem('موكا')">اطلب الآن</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" alt="آيس كوفي">
+            <h3>آيس كوفي</h3>
+            <p>قهوة باردة ومنعشة.</p>
+            <p class="price">20000 جنيه</p>
+            <button class="btn" onclick="chooseItem('آيس كوفي')">اطلب الآن</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="كيك">
+            <h3>كيك الشوكولاتة</h3>
+            <p>حلوى لذيذة مع قهوتك.</p>
+            <p class="price">20000 جنيه</p>
+            <button class="btn" onclick="chooseItem('كيك الشوكولاتة')">اطلب الآن</button>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>كافي آية ☕</p>
+    <p>كل رشفة لها حكاية.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
