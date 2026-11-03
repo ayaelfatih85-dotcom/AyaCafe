@@ -1,0 +1,62 @@
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>التعليقات | كافي آية</title>  
+    <link rel="stylesheet" href="style.css">  
+</head>  <body>  <header>  
+    <h1>💬 آراء زبائن كافي آية</h1>  <nav>  
+    <a href="index.html">الرئيسية</a>  
+    <a href="menu.html">المنيو</a>  
+    <a href="order.html">طلب أوردر</a>  
+    <a href="comments.html">التعليقات</a>  
+    <a href="contact.html">تواصل معنا</a>  
+</nav>
+
+</header>  <main class="container">  <form id="commentForm">  
+
+    <h2>شاركونا رأيكم 💗</h2>  
+
+    <label for="commentName">الاسم</label>  
+    <input  
+        type="text"  
+        id="commentName"  
+        maxlength="100"  
+        required  
+    >  
+
+    <label for="rating">التقييم</label>  
+    <select id="rating" required>  
+        <option value="">اختاري التقييم</option>  
+        <option value="5">⭐⭐⭐⭐⭐ ممتاز</option>  
+        <option value="4">⭐⭐⭐⭐ جيد جداً</option>  
+        <option value="3">⭐⭐⭐ جيد</option>  
+        <option value="2">⭐⭐ مقبول</option>  
+        <option value="1">⭐ يحتاج إلى تحسين</option>  
+    </select>  
+
+    <label for="commentText">التعليق</label>  
+    <textarea  
+        id="commentText"  
+        maxlength="2000"  
+        required  
+        placeholder="اكتبي رأيك عن الكافي..."  
+    ></textarea>  
+
+    <button type="submit" class="btn full">  
+        إضافة التعليق  
+    </button>  
+
+    <p id="commentMessage" class="message"></p>  
+
+</form>  
+
+<section>  
+    <h2 class="section-title">تعليقات الزبائن</h2>  
+    <div id="commentsList" class="cards"></div>  
+</section>
+
+</main>  <footer>  
+    <p>رأيك يهمنا ☕</p>  
+</footer>  <script src="script.js"></script>  </body>  
+</html>
